@@ -2,6 +2,7 @@ package jasmine
 
 import (
 	"git.sr.ht/~sircmpwn/tokidoki/storage"
+	"github.com/1f349/cardcaldav"
 	"github.com/emersion/go-webdav"
 	"github.com/emersion/go-webdav/caldav"
 	"net/http"
@@ -11,10 +12,11 @@ import (
 
 type Conf struct {
 	Listen string `json:"listen"`
+	DB     string `json:"db"`
 }
 
 type jasmineHandler struct {
-	auth    *Auth
+	auth    *cardcaldav.Auth
 	backend caldav.Backend
 }
 
@@ -54,8 +56,8 @@ func (j *jasmineHandler) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 }
 
 func NewHttpServer(conf Conf, wd string) *http.Server {
-	// TODO: database auth
-	principle := &Auth{}
+	cardcaldav.SetupLogger(Logger)
+	principle := cardcaldav.NewAuth(conf.DB, Logger)
 
 	calStorage, _, err := storage.NewFilesystem(filepath.Join(wd, "storage"), "/calendar/", "/contacts/", principle)
 	if err != nil {
@@ -89,19 +91,4 @@ func NewHttpServer(conf Conf, wd string) *http.Server {
 		IdleTimeout:       time.Minute,
 		MaxHeaderBytes:    2500,
 	}
-}
-
-func MainHandler(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
-		rw.Header().Set("Dav", "1, 2, 3, calendar-access, extended-mkcol")
-		if (req.Method == http.MethodHead || req.Method == http.MethodGet || req.Method == http.MethodPost) && req.RequestURI == "/" {
-			if req.Method == http.MethodHead {
-				return
-			}
-			http.Error(rw, "Jasmine API Endpoint", http.StatusOK)
-			return
-		}
-		Logger.Info("Request", "method", req.Method, "url", req.URL.String())
-		next.ServeHTTP(rw, req)
-	})
 }
