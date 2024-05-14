@@ -16,7 +16,7 @@ type Conf struct {
 }
 
 type jasmineHandler struct {
-	auth    *cardcaldav.Auth
+	auth    AuthProvider
 	backend caldav.Backend
 }
 
@@ -55,9 +55,14 @@ func (j *jasmineHandler) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	http.NotFound(rw, req)
 }
 
+type AuthProvider interface {
+	cardcaldav.ProviderMiddleware
+	webdav.UserPrincipalBackend
+}
+
 func NewHttpServer(conf Conf, wd string) *http.Server {
 	cardcaldav.SetupLogger(Logger)
-	principle := cardcaldav.NewAuth(conf.DB, Logger)
+	principle := NullAuth(cardcaldav.NewAuth(conf.DB, Logger))
 
 	calStorage, _, err := storage.NewFilesystem(filepath.Join(wd, "storage"), "/calendar/", "/contacts/", principle)
 	if err != nil {
