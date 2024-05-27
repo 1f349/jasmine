@@ -74,7 +74,7 @@ func (s *serveCmd) Execute(_ context.Context, _ *flag.FlagSet, _ ...any) subcomm
 func normalLoad(startUp jasmine.Conf, wd string) {
 	srv := jasmine.NewHttpServer(startUp, wd)
 	jasmine.Logger.Infof("Starting HTTP server on '%s'", srv.Addr)
-	go utils.RunBackgroundHttp("HTTP", srv)
+	go utils.RunBackgroundHttp(jasmine.Logger, srv)
 
 	exit_reload.ExitReload("Jasmine", func() {}, func() {
 		// stop http server
