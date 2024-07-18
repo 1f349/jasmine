@@ -35,4 +35,4 @@ require (
 	golang.org/x/sys v0.22.0 // indirect
 )
 
-replace github.com/emersion/go-webdav => github.com/1f349/go-webdav v0.0.3
+replace github.com/emersion/go-webdav => github.com/1f349/go-webdav v0.0.4

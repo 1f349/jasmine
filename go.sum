@@ -4,8 +4,8 @@ git.sr.ht/~sircmpwn/tokidoki v0.0.0-20240708100708-7969df1a38ac h1:JyOWvPeL5QXYV
 git.sr.ht/~sircmpwn/tokidoki v0.0.0-20240708100708-7969df1a38ac/go.mod h1:/1jsi+vx9b/T8UHrDRJXwoY8td9JUXd9UajtVCpVoeg=
 github.com/1f349/cardcaldav v0.0.4 h1:byhhQOFJ2JItbMBp9mUc1hn8KAE22iem8ico4/piyyA=
 github.com/1f349/cardcaldav v0.0.4/go.mod h1:MCoGRimM7p/rLWtaJxYO91tsvgXZ47M69X3lldb5dfk=
-github.com/1f349/go-webdav v0.0.3 h1:f3b2/4ZQDUVrMC1WC3P48VbpCyp4EwWE/VYQ6HRxAHY=
-github.com/1f349/go-webdav v0.0.3/go.mod h1:mI8iBx3RAODwX7PJJ7qzsKAKs/vY429YfS2/9wKnDbQ=
+github.com/1f349/go-webdav v0.0.4 h1:TJcPuLMl+KHPgmsz6rO7kVAZFPhHcrUc92r4VQ5PT5c=
+github.com/1f349/go-webdav v0.0.4/go.mod h1:mI8iBx3RAODwX7PJJ7qzsKAKs/vY429YfS2/9wKnDbQ=
 github.com/1f349/violet v0.0.14 h1:MpBZ4n1dJjdiIwYMTfh0PBIFll3kjqowxR6DLasafqE=
 github.com/1f349/violet v0.0.14/go.mod h1:iAREhm+wxnGXkmuvmBhOuhUx2T7/5w7stLYNgQGbqC8=
 github.com/aymanbagabas/go-osc52/v2 v2.0.1 h1:HwpRHbFMcZLEVr42D4p7XBqjyuxQH5SMiErDT4WkJ2k=
