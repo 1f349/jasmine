@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	git.sr.ht/~sircmpwn/tokidoki v0.0.0-20250116163541-8085f6878f95
-	github.com/1f349/cardcaldav v0.1.0
+	github.com/1f349/cardcaldav v0.1.1
 	github.com/1f349/violet v0.0.16
 	github.com/charmbracelet/log v1.0.0
 	github.com/emersion/go-webdav v0.7.0
@@ -24,7 +24,7 @@ require (
 	github.com/clipperhouse/displaywidth v0.11.0 // indirect
 	github.com/clipperhouse/uax29/v2 v2.7.0 // indirect
 	github.com/emersion/go-ical v0.0.0-20250609112844-439c63cef608 // indirect
-	github.com/emersion/go-vcard v0.0.0-20241024213814-c9703dde27ff // indirect
+	github.com/emersion/go-vcard v0.0.0-20260618161152-d854b7e0e2d3 // indirect
 	github.com/go-logfmt/logfmt v0.6.1 // indirect
 	github.com/go-sql-driver/mysql v1.10.0 // indirect
 	github.com/lucasb-eyer/go-colorful v1.4.0 // indirect
@@ -36,10 +36,10 @@ require (
 	github.com/rs/zerolog v1.35.1 // indirect
 	github.com/teambition/rrule-go v1.8.2 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
-	golang.org/x/crypto v0.53.0 // indirect
-	golang.org/x/exp v0.0.0-20260611194520-c48552f49976 // indirect
-	golang.org/x/net v0.56.0 // indirect
-	golang.org/x/sys v0.46.0 // indirect
+	golang.org/x/crypto v0.54.0 // indirect
+	golang.org/x/exp v0.0.0-20260709172345-9ea1abe57597 // indirect
+	golang.org/x/net v0.57.0 // indirect
+	golang.org/x/sys v0.47.0 // indirect
 )
 
 replace github.com/emersion/go-webdav => github.com/1f349/go-webdav v0.6.0-patch.3
